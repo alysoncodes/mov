@@ -1,0 +1,401 @@
+/*------------------------------------
+ *   VARIABLES
+ *------------------------------------*/
+
+
+/**GLOBAL COLORS**/
+
+
+
+/**BREAKPOINTS**/
+
+@maxBP: 1649px;
+@deskBP: 768px;
+@mBP: 767px;
+
+
+/**OTHER VARIABLES**/
+
+@mobile:~"only screen and (max-width: 767px)";
+@desktop:~"only screen and (min-width: 768px)";
+@tablet: ~"only screen and (max-width: 1024px) and (min-width:768px)";
+@desktopXL: ~"only screen and (min-width: 1649px)"; 
+
+
+/*------------------------------------
+ *   MIXINS
+ *------------------------------------*/
+
+.headfont {
+
+}
+
+.buttonfont {
+    
+}
+
+/*------------------------------------
+ *   CUSTOM FONTS
+ *------------------------------------*/
+
+@font-face {
+  font-family: '';
+  src: url('') format('woff');
+}
+//paragraph font
+@font-face {
+  font-family: '';
+  src: url('') format('woff');
+}
+//h4/subheader
+@font-face {
+  font-family: '';
+  src: url('') format('woff');
+}
+//button font
+@font-face {
+  font-family: '';
+  src: url('') format('woff');
+}
+/*------------------------------------
+ *   GLOBAL STYLES
+ *------------------------------------*/
+.full-width {
+.fluid-engine {
+  --sqs-site-max-width:100vw;
+
+  --sqs-site-gutter:0vw;
+
+}
+}
+
+//CUSTOM CLASSES//
+
+//sticky class 
+
+@media @desktop{
+  body:not(.sqs-edit-mode-active) {
+
+  .sticky {
+   position:sticky;
+   top:0;
+}
+  }
+#sections.sticky .page-section {
+    transform: translate3d(0,0,0) !important;
+}
+}
+
+//transparent class
+@media @desktop{
+  body:not(.sqs-edit-mode-active) {
+.transparent {
+.section-border, .section-background {
+background-color:transparent !important;
+}
+    }}}
+
+//hovered class
+
+.hovered .sqs-image:hover img{
+transform:scale(1.1);
+}
+
+.hovered .sqs-image:hover img{
+transition:0.5s;
+}
+
+//padding in smaller devices
+
+@media screen and (max-width:1024px) {
+.html-block.sqs-background-enabled {
+    padding: 2% !important;
+}
+}
+
+html {
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+//hiding markdowns on page load
+.markdown-block p {
+animation:fadeEnter 2s forwards;
+}
+@keyframes fadeEnter {
+0% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+//button styles
+//light sections button style on hover
+.white .sqs-button-element--secondary:hover{
+  background-color: #AC8A4D!important;
+  border: 0px;
+}
+
+//black/dark sections button style on hover
+.black .sqs-button-element--secondary:hover{
+  background-color: #D1CBDF!important;
+  border: 0px;
+  color: #323232;
+}
+
+a.sqs-button-element--primary{
+  text-transform: uppercase !important;
+  letter-spacing: .12rem !important;
+  font-weight: 500 !important;
+}
+
+.page-section:not(.user-items-list-section):not(.content-collection)>.content-wrapper {
+    box-sizing: border-box !important;
+    position: static !important
+}
+body:not(.sqs-edit-mode) {
+.sqs-row {
+ position:static !important
+}
+}
+
+a {
+  background-size:0px !important;
+  text-decoration:none !important;
+}
+//adding mask to image
+
+.fe-block:has(img[src*='shape']) .fluid-image-container  {
+  -webkit-mask-image:url(https://static1.squarespace.com/static/65e8cb9d0402967b88ee0bd6/t/65f2840c2af9d5416719b268/1710392332504/shape.svg) !important;
+  -webkit-mask-position:center;
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-size:contain;
+}
+
+//adding mask to video
+
+.sqs-native-video[data-config-video*='shape']{ 
+  -webkit-mask-image:url('https://static1.squarespace.com/static/65e8cb9d0402967b88ee0bd6/t/65f2840c2af9d5416719b268/1710392332504/shape.svg');
+  -webkit-mask-repeat:no-repeat;
+  -webkit-mask-position:center;
+  -webkit-mask-size:contain;
+}
+  
+
+
+
+/** Fluid Video Block**/
+
+
+.video-block {
+  .sqs-native-video .native-video-player {
+    padding-top: 0 !important;
+  }
+
+  .video-player .plyr__poster {
+    object-fit:cover !important;
+    background-size:cover !important;
+  }
+  
+  .video-player .plyr video {
+  object-fit: cover !important;
+}
+  .embed-block-wrapper {
+    height: 100% !important;
+  }
+  .intrinsic {
+    height: 100% !important;
+  }
+
+  .sqs-block-content {
+    height: 100% !important;
+  }
+
+  .sqs-native-video {
+    height: 100% !important;
+  }
+  
+  
+}
+
+.is-being-dragged {
+    .sqs-block-video{
+      display:none;
+    }
+  }
+
+
+
+
+/*------------------------------------
+ *   fonts
+ *------------------------------------*/
+
+p.sqsrte-large{
+  text-transform: uppercase !important;
+}
+
+
+
+
+//unhide if I want to globally remove margins
+/*
+h1,h2,h3 {
+ margin:0em !important;
+}
+*/
+
+//fluid sizes
+
+
+
+//section themes
+
+/*------------------------------------
+ *  DARK 1
+ *------------------------------------*/
+
+
+
+/*------------------------------------
+ *  HEADER
+ *------------------------------------*/
+body:not(.header--menu-open) .burger-inner  {
+.top-bun, .patty, .bottom-bun {
+  background-color:#323232 !important;
+}
+}
+body.header--menu-open .burger-inner  {
+.top-bun, .patty, .bottom-bun {
+  background-color:#FCF8EC !important;
+}
+}
+.header-display-desktop .header-burger {
+display:flex !important;
+order:2;
+  
+}
+.header--menu-open {
+  .header-menu {
+     opacity:1;
+    visibility:visible;   
+  }
+  .header-menu-bg {
+    background-color:#DDD1C3;
+  }
+}
+
+.header-display-desktop .header-burger {
+     order: 1;
+}
+.header-title-nav-wrapper {
+     order: 2;    
+     flex: 0 0 62%;    
+}
+.header-actions {
+     order: 3; 
+}
+.header-menu {
+     left: 0px !important;
+}
+.header-menu-nav-folder {
+     overflow-y: hidden;
+}
+@media screen and (min-width:767px) {
+  .header-menu {
+    height:100vh;
+    width: 40vw !important;
+  }
+
+  .header-menu-nav-item a {
+    font-size:1.7vw !important; /**Change Font Size**/
+  }
+
+  .header-menu-nav-folder-content {
+    flex-direction:row;
+    align-items:center;
+  }
+  
+  .header-nav-wrapper {
+    display:none;
+  }
+}
+
+.header-menu-nav-item--collection a{
+  color: #FCF8EC !important;
+  text-transform: uppercase;
+}
+.header-menu-nav-item--active a{
+  color: #EB5F28 !important;
+}
+.header-menu-nav-item--collection a:hover{
+  color: #D1CBDF !important;
+}
+/*------------------------------------
+ *  FOOTER
+ *------------------------------------*/
+
+
+
+//page specific
+
+/*------------------------------------
+ *  HOME
+ *------------------------------------*/
+
+//video opacity
+
+#block-yui_3_17_2_1_1710391106977_1741 .plyr__video-wrapper{
+  opacity: .6!important;
+}
+#block-yui_3_17_2_1_1710961724403_42209{
+.Marquee-display  p{
+  text-transform: uppercase !important;
+  font-weight: 500;
+  font-size:.9em !important;
+  letter-spacing: .03rem;
+}
+}
+
+/*------------------------------------
+ *  Get to know us
+ *------------------------------------*/
+
+@media @desktop{
+section[data-section-id="65ff72e5b02cc516c617f686"]{
+   .fe-block:nth-child(1){
+    position: sticky !important;
+    top: 5% !important;
+    
+}
+  }}
+
+
+
+/*------------------------------------
+ * Plan your visit
+ *------------------------------------*/
+.fe-block:has(img[src*='floating']) .fluid-image-container {  
+    animation-name: floating;
+    animation-duration: 0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+  }
+ 
+@keyframes floating {
+    0% { 
+      left: -500%;
+      scale: 100%;
+  }
+    50%  { 
+      right: 25%;
+  }
+    100%   { 
+     top: 25%; 
+     left: 10%;
+     scale: .5;
+  }    
+}
