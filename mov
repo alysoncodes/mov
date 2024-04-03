@@ -53,6 +53,25 @@
 
 //CUSTOM CLASSES//
 
+//add file name moveScale to image to use this animation
+
+/**Initial State**/
+.fe-block:has(img[src*='moveScale']) {
+  transform:scale(4.5) translate(-10%, 10px)!important;
+  transition:10s linear;
+  position: sticky !important;
+  
+
+}
+
+/**Animate State**/
+
+.fe-block:has(img[src*='moveScale']).animate {
+transform:scale(1.5) translate(100px, 300%) !important;
+
+}
+
+
 //sticky class 
 
 @media @desktop{
@@ -223,7 +242,11 @@ a {
   }
 
 
+//accordion styling
 
+.accordion-item__description{
+  margin-left: 0!important;
+}
 
 /*------------------------------------
  *   fonts
@@ -243,8 +266,10 @@ h1,h2,h3 {
 }
 */
 
-//fluid sizes
-
+//system buttons
+.newsletter-form-button.sqs-system-button{
+  padding: 1em 4em !important;
+}
 
 
 //section themes
@@ -330,6 +355,13 @@ order:2;
   color: #D1CBDF !important;
 }
 
+.header-menu-nav-list{
+  margin-top: -50%;
+  
+  .header-menu-cta{
+   display: none;
+  }
+}
 
 
 
@@ -337,7 +369,9 @@ order:2;
  *  FOOTER
  *------------------------------------*/
 
-
+footer a span:hover{
+  color: #D1CBDF !important;
+}
 
 //page specific
 
@@ -357,6 +391,13 @@ order:2;
   font-size:.9em !important;
   letter-spacing: .03rem;
 }
+}
+
+//hiding overflow because of scroll animation
+
+
+section[data-section-id="65fb3954066c9f0c31c10d1b"]{
+  overflow: hidden !important;
 }
 
 /*------------------------------------
@@ -399,4 +440,147 @@ section[data-section-id="65ff72e5b02cc516c617f686"]{
      left: 10%;
      scale: .5;
   }    
+}
+
+/*------------------------------------
+ * Pricing
+ *------------------------------------*/
+
+#collection-65efc6bd0dc6620f9db7ff1c{
+.sqs-gallery {
+  position:relative;
+  padding-top: 12vw;
+  padding-bottom: 12vw;
+  padding-left: 4vw;
+  padding-right: 4vw;
+  height: 100%!important;
+}
+  .sqs-gallery img{
+    object-fit: cover!important;
+  }
+  .sqs-gallery-block-stacked .image-wrapper img{
+    width: 100%;
+    height: 100%;
+  }
+.sqs-gallery-block-stacked .image-wrapper {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100% !important;
+  transition: 0.5s cubic-bezier(0.42,0.04,0.1,1.14);
+  left: 50%;
+  top:50%;
+  translate:-50% -50%;
+  //scale:0.6;
+  pointer-events:none;
+  
+}
+
+.sqs-gallery-block-stacked:hover .image-wrapper {
+  opacity: 1;
+  scale:1;
+  
+}
+/**Title and Description **/
+.sqs-gallery-block-stacked {
+  .meta-title {
+    font-size:2rem;
+    text-transform:uppercase;
+  }
+  .meta-description {
+    max-width:100%;
+  }
+  border: 1px solid black!important;
+  width: 100%;
+  
+}
+
+/** Alignment and Spacing of Text**/
+.sqs-gallery-block-stacked .meta-inside {
+  margin:0 !important;
+  text-align:center;
+}
+
+.sqs-gallery-block-stacked .meta-title {
+  margin-block-start:0 !important;
+  margin-bottom:0 !important;
+  margin-block-end:0 !important;
+  text-transform: capitalize!important;
+  font-size: 2.5rem !important;
+  font-style: italic !important;
+  
+}
+  .meta-description p strong{
+   font-size: 2.5rem !important;
+  font-style: italic !important;
+    font-weight: 400 !important;
+    font-family: kepler;
+    line-height: 5rem;
+  }
+  
+  .meta-description p a{
+    color: #323232;
+    text-transform: uppercase !important;
+    line-height: 5rem;
+    font-weight: 500!important;
+    border: 1px solid #323232;
+    border-radius: 300px;
+    padding: .6rem 3rem!important;
+  }
+  .meta-description p a:hover{
+    background-color: #D1CBDF !important;
+    border: 0px;
+  }
+  
+  .meta-description p.sqsrte-large{
+    line-height: 3rem
+  }
+  
+.meta {
+  position:relative;
+}
+/**Make the entire block clickable**/
+.meta-description a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color:transparent;
+  top: 0;
+  left:0;
+}
+.meta {
+  position:relative;
+}
+
+/**Mobile**/
+@media screen and (max-width:767px) {
+  .sqs-gallery {
+    display:flex;
+    gap:1rem;
+    .meta-inside {
+        text-align:left !important;
+    }
+  }
+  
+  
+  .fe-block:nth-child(odd) {
+    .sqs-gallery {
+    flex-direction:row-reverse;
+      
+   
+  }
+  }
+  .sqs-gallery-block-stacked .image-wrapper {
+    opacity:1;
+    translate:0 0;
+    top:0;
+    left:0;
+    position:relative;
+    scale:1;
+    flex-basis:15%;
+    display: none!important;
+  }
+}
+  
 }
